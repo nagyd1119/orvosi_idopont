@@ -14,7 +14,7 @@ CREATE TABLE user (
 CREATE TABLE patient (
     id          INTEGER PRIMARY KEY,
     user_id     INTEGER NOT NULL UNIQUE,
-    ssn         TEXT,            -- TAJ equivalent
+    taj         TEXT,            -- TAJ equivalent
     note        TEXT,
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 );
