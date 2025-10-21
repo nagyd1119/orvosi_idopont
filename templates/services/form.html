@@ -1,0 +1,19 @@
+<!-- templates/services/form.html -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for cat, msg in messages %}
+    <div class="flash {{cat}}">{{msg}}</div>
+  {% endfor %}
+{% endwith %}
+
+<form method="post" action="{{ url_for('services.create_service') }}">
+  <label>Név
+    <input name="name" required>
+  </label>
+  <label>Alap idő (perc)
+    <input name="base_duration_min" type="number" min="0" value="30">
+  </label>
+  <label>Alap ár (Ft)
+    <input name="base_price" type="number" min="0" value="25000">
+  </label>
+  <button type="submit">Létrehozás</button>
+</form>
